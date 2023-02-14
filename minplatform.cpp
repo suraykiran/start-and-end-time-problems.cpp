@@ -18,3 +18,20 @@ vector<int>ar(2401,0);
         // }
         int k=*max_element(pre.begin(),pre.end());
         return k;
+        //greedy approach
+       sort(arr,arr+n);
+        sort(dep,dep+n);
+        int i=1,j=0,cnt=1;
+        while(i<n && j<n)
+        {
+            if(arr[i]<=dep[j])
+            {
+                cnt++;
+            }
+            else
+            {
+                j++;
+            }
+            i++;
+        }
+        return cnt;
